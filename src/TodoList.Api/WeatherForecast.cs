@@ -1,4 +1,4 @@
-namespace TodoList;
+namespace TodoList.Api;
 
 public class WeatherForecast
 {
