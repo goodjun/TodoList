@@ -1,5 +1,6 @@
 using TodoList.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using TodoList.Api.DbUp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ builder.Services.AddDbContext<TodoListDbContext>(
 );
 
 var app = builder.Build();
+
+// DbUp
+new DbUpRunner(connectionString).Run();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

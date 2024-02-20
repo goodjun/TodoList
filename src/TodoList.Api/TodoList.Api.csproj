@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dbup" Version="5.0.40" />
+    <PackageReference Include="dbup-mysql" Version="5.0.40" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +21,11 @@
     </PackageReference>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DbUp\Scripts\script0001_initial_tables.sql" />
+    <EmbeddedResource Include="DbUp\Scripts\script0001_initial_tables.sql" />
   </ItemGroup>
 
 </Project>
