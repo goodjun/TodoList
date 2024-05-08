@@ -19,13 +19,11 @@ public class DbUpRunner
         EnsureDatabase.For.MySqlDatabase(_connectionString);
 
         var upgradeEngine = DeployChanges.To.MySqlDatabase(_connectionString)
-            .WithScriptsAndCodeEmbeddedInAssembly(typeof(DbUpRunner).Assembly,
-                s => s.StartsWith($"{typeof(DbUpRunner).Namespace}"))
+            .WithScriptsAndCodeEmbeddedInAssembly(typeof(DbUpRunner).Assembly)
             .WithTransaction()
-            .LogToAutodetectedLog()
             .LogToConsole()
             .Build();
-
+        
         var result = upgradeEngine.PerformUpgrade();
 
         if (!result.Successful)

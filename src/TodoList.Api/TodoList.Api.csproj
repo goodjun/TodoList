@@ -24,8 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="DbUp\Scripts\script0001_initial_tables.sql" />
-    <EmbeddedResource Include="DbUp\Scripts\script0001_initial_tables.sql" />
+    <EmbeddedResource Include="DbUp\Scripts\*.sql">
+      <LogicalName>%(filename)%(extension)</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
