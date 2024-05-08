@@ -19,6 +19,7 @@ builder.Services.AddDbContext<TodoListDbContext>(
         .LogTo(Console.WriteLine, LogLevel.Information)
         .EnableDetailedErrors()
         .EnableSensitiveDataLogging()
+        .UseSnakeCaseNamingConvention()
 );
 
 var app = builder.Build();
